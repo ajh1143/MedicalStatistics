@@ -81,7 +81,7 @@ exercise_i(SAMPLE_DATA)
 ```Python3
     
 def exercise_ii(data):
-    data_mean =np.mean(data)
+    data_mean = np.mean(data)
     data_median = np.median(data)
     data_mode = stats.mode(data)
     mode_output = int(data_mode[0])
