@@ -1,6 +1,6 @@
 Novel Python solutions to end-of-chapter statistics problems from the 4th Ed. of '**Medical Statistics**' from *Campbell, Machin, and Walters*. 
 
-## Chapter 2 : Displaying Quantitative Data    
+## Chapter 2 : Displaying Categorical Data    
 ### Clustered bar chart, thromboembolic women by blood type    
 ```Python3
 
