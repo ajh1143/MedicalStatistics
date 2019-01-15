@@ -5,10 +5,13 @@
 sample_data = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 16, 64, 24, 18, 20, 21, 23, 22, 32]
 
 (i) Draw a dot plot and histogram. Is distribution symmetric or skewed?
+(ii) Calculate the mean, median, mode.
 """
+import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from bokeh.plotting import figure, show
-import pandas as pd
+from scipy import stats
 from collections import Counter
 
 SAMPLE_DATA = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 16, 64, 24, 18, 20, 21, 23, 22, 32]
@@ -44,4 +47,11 @@ def exercise_i(data):
     plt.show()
     show(dot_plot)
 
+def exercise_ii(data):
+    data_mean =np.mean(data)
+    data_median = np.median(data)
+    data_mode = stats.mode(data)
+    mode_output = int(data_mode[0])
+    print("Mean:{}\nMedian:{}\nMode:{}".format(data_mean, data_median, mode_output))    
+    
 exercise_i(SAMPLE_DATA)
