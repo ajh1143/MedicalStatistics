@@ -90,7 +90,7 @@ def exercise_ii(data):
  exercise_ii(SAMPLE_DATA)
  ```
  
- ### Calcualte Range, Inter-quartile Range, Standard Deviation    
+ ### Calculate Range, Inter-quartile Range, Standard Deviation    
  **Range** NumPy Solution: numpy.abs(max(data) - min(data))    
  **IQR** SciPy Solution scipy.stats.iqr(data)    
  **SD** NumPy Solution: numpy.std(data)    
