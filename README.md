@@ -75,9 +75,9 @@ exercise_i(SAMPLE_DATA)
 ```
 
 ### Calculate Mean, Median, Mode    
-**Mean** Numpy Solutions: numpy.mean(data)    
+**Mean** Numpy Solution: numpy.mean(data)    
 **Median** Numpy Solution: numpy.median(data)    
-**Mode** SciPy Solution: scipy.stats.mode(int(data[0]))    
+**Mode** SciPy Solution: scipy.stats.mode(int(data[0])) - access index 0 for key of mode value, convert to int to remove `[]` delimiter
 ```Python3
     
 def exercise_ii(data):
