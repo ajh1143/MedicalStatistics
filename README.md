@@ -70,7 +70,15 @@ def exercise_i(data):
     # Generate plots
     plt.show()
     show(dot_plot)
-    
+
+exercise_i(SAMPLE_DATA)
+```
+
+### Calculate Mean, Median, Mode    
+**Mean** Numpy Solutions: numpy.mean(data)    
+**Median** Numpy Solution: numpy.median(data)    
+**Mode** SciPy Solution: scipy.stats.mode(int(data[0]))    
+```Python3
     
 def exercise_ii(data):
     data_mean =np.mean(data)
@@ -78,6 +86,6 @@ def exercise_ii(data):
     data_mode = stats.mode(data)
     mode_output = int(data_mode[0])
     print("Mean:{}\nMedian:{}\nMode:{}".format(data_mean, data_median, mode_output))
-
-exercise_i(SAMPLE_DATA)
-```
+ 
+ exercise_ii(SAMPLE_DATA)
+ ```
