@@ -32,7 +32,11 @@ def exercise_i(data):
 
     #Plot Histogram
     df.plot.hist(grid=True, bins=10, rwidth=.75,
-                       color='#607c8e')
+                   color='#607c8e', legend=False)
+    plt.title("Ages of Motorcyclists Critically Injured")
+    plt.xlabel("Ages")
+    plt.ylabel("Counts")
+    
     # Apply X-axis ticks, 5 year ranges
     plt.xticks(range(0, 100, 5))
 
