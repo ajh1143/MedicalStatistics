@@ -6,6 +6,7 @@ sample_data = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 1
 
 (i) Draw a dot plot and histogram. Is distribution symmetric or skewed?
 (ii) Calculate the mean, median, mode.
+(iii) Calculate the range, inter quartile range, and standard deviation.
 """
 import pandas as pd
 import numpy as np
@@ -54,4 +55,13 @@ def exercise_ii(data):
     mode_output = int(data_mode[0])
     print("Mean:{}\nMedian:{}\nMode:{}".format(data_mean, data_median, mode_output))    
     
+
+def exercise_iii(data):
+    data_range = np.abs(max(data) - min(data))
+    data_quartiles = stats.iqr(data)
+    data_sd = np.std(data)
+    print("Range:{}\nInterquartile Range:{}\nStandard Deviation:{}".format(data_range, data_quartiles, data_sd))
+    
 exercise_i(SAMPLE_DATA)
+exercise_ii(SAMPLE_DATA)
+exercise_iii(SAMPLE_DATA)
