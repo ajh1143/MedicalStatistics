@@ -89,3 +89,17 @@ def exercise_ii(data):
  
  exercise_ii(SAMPLE_DATA)
  ```
+ 
+ ### Calcualte Range, Inter-quartile Range, Standard Deviation    
+ **Range** NumPy Solution: numpy.abs(max(data) - min(data))    
+ **IQR** SciPy Solution scipy.stats.iqr(data)    
+ **SD** NumPy Solution: numpy.std(data)    
+```Python3
+def exercise_iii(data):
+    data_range = np.abs(max(data) - min(data))
+    data_quartiles = stats.iqr(data)
+    data_sd = np.std(data)
+    print("Range:{}\nInterquartile Range:{}\nStandard Deviation:{}".format(data_range, data_quartiles, data_sd))
+
+exercise_iii(SAMPLE_DATA)
+```
