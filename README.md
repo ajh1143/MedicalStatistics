@@ -1,7 +1,7 @@
 Novel Python solutions to end-of-chapter statistics problems from the 4th Ed. of '**Medical Statistics**' from *Campbell, Machin, and Walters*. 
 
-## Chapter 2 : Displaying Quantitative Data
-### Clustered bar chart, thromboembolic women by blood type
+## Chapter 2 : Displaying Quantitative Data    
+### Clustered bar chart, thromboembolic women by blood type    
 ```Python3
 
 import pandas as pd
@@ -20,8 +20,10 @@ plt.xticks(rotation='horizontal')
 #display plot
 plt.show()
 ```
-## Chapter 3 : Displaying Quantitative Data
-### Dot Plot, Bar Chart of Ages of Motor Cyclists mortally injured in accidents
+## Chapter 3 : Displaying Quantitative Data    
+### Dot Plot, Bar Chart of Ages of Motor Cyclists mortally injured in accidents    
+**Dot Plot**: Solution using Bokeh, allows user to hover over data points to display values    
+**Bar Chart**: Solution using MatPlotLib to generate binned age ranges.     
 ```Python3
 """
 3.6 Exercises
