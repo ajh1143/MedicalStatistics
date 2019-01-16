@@ -45,46 +45,73 @@ SAMPLE_DATA = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 1
 ### Dot Plot, Bar Chart of Ages of Motor Cyclists mortally injured in accidents    
 **Dot Plot**: Solution using Bokeh, allows user to hover over data points to display values    
 **Bar Chart**: Solution using MatPlotLib to generate binned age ranges.     
+**KDE Charts**: Kernel density plots, with/without area under the curve shaded using Seaborn vs MatPlotLib.
 ```Python3
 def exercise_i(data):
     """
-    :param data: list of age of expiration due to motorcycle accidents
+    :param data: list of age of expiration due to motorcycle accident
+    :param facs: list of factors, set of unique ages in data
+
     """
+
     def get_counts(data_to_count):
+    """counts of incident per age"""
         counted_data = Counter(data_to_count)
         factors = list(counted_data.keys())
         counts = list(counted_data.values())
         return factors, counts
 
-    # Get counts
+    # Get counts of incident per age
     factors, counts = get_counts(data)
-    
-    # Build Dot Plot
+
+    #Create Dot Plot
     dot_plot = figure(title="Ages of Motorcyclists Critically Injured", tools="hover", toolbar_location=None,
                       y_range=[0,max(counts)+1],  x_range=[0, 100])
     dot_plot.circle(y=counts,x=factors, size=10, fill_color="red", line_color="black", line_width=3)
 
-    #Convert data to DataFrame for MatPlotLib Histogram
-    df = pd.DataFrame(data)
 
+    #Convert data to DataFrame
+    df = pd.DataFrame(data)
     # Create bin, ages 0 to 100, intervals of 5
     bin_range = range(0,100,5)
-    
-    # Construct Histogram Plot, apply a grid, set bins, remove unnecessary legend
-    df.plot.hist(grid=True, bins=bin_range,
-                       color='#607c8e', legend=False)
-    
-    # Add title, x and y axis labels
-    plt.title("Ages of Motorcyclists Critically Injured")
-    plt.xlabel("Ages")
-    plt.ylabel("Counts")
-    
-    # Apply X-axis ticks, 5 year ranges
-    plt.xticks(bin_range)
 
+    # Construct Histogram Plot, apply a grid, set bins, remove unnecessary legend
+    def get_histogram(dataframe):
+        dataframe.plot.hist(grid=True, bins=bin_range,
+                           color='#607c8e', legend=False)
+        # Add title, x and y axis labels
+        plt.title("Ages of Motorcyclists Critically Injured")
+        plt.xlabel("Ages")
+        plt.ylabel("Counts")
+        # Apply X-axis ticks, 5 year ranges
+        plt.xticks(bin_range)
+        plt.show()
+
+    def get_kde_unshaded(dataframe):
+        # KDE Plot, set line color to red, constrain distribution from 0 to 100
+        dataframe.plot(kind='kde', color='red', legend=False).set_xlim(0,100)
+        plt.title("Ages of Motorcyclists Critically Injured")
+        plt.xlabel("Ages")
+        plt.ylabel('Density')
+        # Apply X-axis ticks, 5 year ranges
+        plt.xticks(bin_range)
+        plt.show()
+
+    def get_kde_shaded(dataframe):
+        ax = sns.distplot(dataframe,hist=False, kde=True,
+                     kde_kws={'shade': True, 'linewidth': 3})
+        ax.set_title('Ages of Motorcyclists Critically Injured')
+        ax.set_ylabel('Density')
+        ax.set_xlabel("Age")
+        ax.set_xlim(0,100)
+
+    get_histogram(df)
+    get_kde_unshaded(df)
+    get_kde_shaded(df)
     # Generate plots
     plt.show()
     show(dot_plot)
+
 
 exercise_i(SAMPLE_DATA)
 ```
@@ -92,6 +119,10 @@ exercise_i(SAMPLE_DATA)
 <img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_i_bokeh.png" class="inline"/><br>
 #### MatPlotLib Histogram Output    
 <img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/ei_hist.png" class="inline"/><br>
+#### MatPlotLib KDE (Unshaded AOC)
+<img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_i_unshaded.png" class="inline"/><br>
+#### Seaborn KDE (Shaded AOC)
+<img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_i_shaded.png" class="inline"/><br>
 
 ### Calculate Mean, Median, Mode    
 **Mean** Numpy Solution: numpy.mean(data)    
