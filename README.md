@@ -26,15 +26,17 @@ plt.show()
 3.6 Exercises
 
 1. Given a sample of ages (discrete years) of motor cyclists mortally injured in accidents
-sample_data = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 16, 64, 24, 32]
+sample_data = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 16, 64, 24, 18, 20, 21, 23, 22, 32]
 
 (i) Draw a dot plot and histogram. Is distribution symmetric or skewed?
 (ii) Calculate the mean, median, mode.
 (iii) Calculate Range, Inter-quartile range, and Standard deviation
 """
 import matplotlib.pyplot as plt
-from bokeh.plotting import figure, show
 import pandas as pd
+import numpy as np
+from scipy import stats
+from bokeh.plotting import figure, show
 from collections import Counter
 
 SAMPLE_DATA = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 16, 64, 24, 18, 20, 21, 23, 22, 32]
