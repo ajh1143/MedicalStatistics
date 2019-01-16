@@ -20,10 +20,7 @@ plt.xticks(rotation='horizontal')
 #display plot
 plt.show()
 ```
-## Chapter 3 : Displaying Quantitative Data    
-### Dot Plot, Bar Chart of Ages of Motor Cyclists mortally injured in accidents    
-**Dot Plot**: Solution using Bokeh, allows user to hover over data points to display values    
-**Bar Chart**: Solution using MatPlotLib to generate binned age ranges.     
+## Chapter 3 : Displaying Quantitative Data   
 ```Python3
 """
 3.6 Exercises
@@ -33,6 +30,7 @@ sample_data = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 1
 
 (i) Draw a dot plot and histogram. Is distribution symmetric or skewed?
 (ii) Calculate the mean, median, mode.
+(iii) Calculate Range, Inter-quartile range, and Standard deviation
 """
 import matplotlib.pyplot as plt
 from bokeh.plotting import figure, show
@@ -40,7 +38,12 @@ import pandas as pd
 from collections import Counter
 
 SAMPLE_DATA = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 16, 64, 24, 18, 20, 21, 23, 22, 32]
+```
 
+### Dot Plot, Bar Chart of Ages of Motor Cyclists mortally injured in accidents    
+**Dot Plot**: Solution using Bokeh, allows user to hover over data points to display values    
+**Bar Chart**: Solution using MatPlotLib to generate binned age ranges.     
+```Python3
 def exercise_i(data):
     """
     :param data: list of age of expiration due to motorcycle accident
