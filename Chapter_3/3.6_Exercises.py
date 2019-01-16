@@ -21,15 +21,24 @@ def exercise_i(data):
     """
     :param data: list of age of expiration due to motorcycle accident
     """
-    #Create Dot Plot
-    counted_data = Counter(data)
-    factors = list(counted_data.keys())
-    counts = list(counted_data.values())
+        def get_counts(data_to_count):
+            """
+            Fetch Key(Age), Value(Counts) pairs for expirations per age entry
+            """
+            counted_data = Counter(data_to_count)
+            factors = list(counted_data.keys())
+            counts = list(counted_data.values())
+            return factors, counts
+
+    # Get counts
+    factors, counts = get_counts(data)
+    
+    # Build Dot Plot
     dot_plot = figure(title="Ages of Motorcyclists Critically Injured", tools="hover", toolbar_location=None,
                       y_range=[0,max(counts)+1],  x_range=[0, 100])
     dot_plot.circle(y=counts,x=factors, size=10, fill_color="red", line_color="black", line_width=3)
 
-    #Convert data to DataFrame
+    #Convert data to DataFrame for MatPlotLib Histogram
     df = pd.DataFrame(data)
 
     # Create bin, ages 0 to 100, intervals of 5
