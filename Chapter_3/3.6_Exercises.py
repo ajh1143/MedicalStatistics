@@ -20,8 +20,6 @@ SAMPLE_DATA = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 1
 def exercise_i(data):
     """
     :param data: list of age of expiration due to motorcycle accident
-    :param facs: list of factors, set of unique ages in data
-
     """
     #Create Dot Plot
     counted_data = Counter(data)
