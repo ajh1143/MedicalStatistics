@@ -61,14 +61,20 @@ def exercise_i(data):
     #Convert data to DataFrame
     df = pd.DataFrame(data)
 
-    #Plot Histogram
-    df.plot.hist(grid=True, bins=10, rwidth=.75,
+    # Create bin, ages 0 to 100, intervals of 5
+    bin_range = range(0,100,5)
+    
+    # Construct Histogram Plot, apply a grid, set bins, remove unnecessary legend
+    df.plot.hist(grid=True, bins=bin_range,
                        color='#607c8e', legend=False)
+    
+    # Add title, x and y axis labels
     plt.title("Ages of Motorcyclists Critically Injured")
     plt.xlabel("Ages")
     plt.ylabel("Counts")
+    
     # Apply X-axis ticks, 5 year ranges
-    plt.xticks(range(0, 100, 5))
+    plt.xticks(bin_range)
 
     # Generate plots
     plt.show()
