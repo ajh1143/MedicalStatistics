@@ -120,9 +120,9 @@ exercise_i(SAMPLE_DATA)
 #### MatPlotLib Histogram Output    
 <img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/ei_hist.png" class="inline"/><br>
 #### MatPlotLib KDE (Unshaded AOC)
-<img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_i_unshaded.png" class="inline"/><br>
+<img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_1_unshaded.png" class="inline"/><br>
 #### Seaborn KDE (Shaded AOC)
-<img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_i_shaded.png" class="inline"/><br>
+<img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_1_shaded.png" class="inline"/><br>
 
 ### Calculate Mean, Median, Mode    
 **Mean** Numpy Solution: numpy.mean(data)    
