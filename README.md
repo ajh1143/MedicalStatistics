@@ -85,7 +85,7 @@ exercise_i(SAMPLE_DATA)
 #### Bokeh Dot Plot Output    
 <img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_i_bokeh.png" class="inline"/><br>
 #### MatPlotLib Histogram Output    
-<img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_i_hist.png" class="inline"/><br>
+<img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/ei_hist.png" class="inline"/><br>
 
 ### Calculate Mean, Median, Mode    
 **Mean** Numpy Solution: numpy.mean(data)    
@@ -102,7 +102,7 @@ def exercise_ii(data):
  
  exercise_ii(SAMPLE_DATA)
  ```
- #### Mean, Meadian, Mode Output    
+ #### Mean, Median, Mode Output    
 <img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_ii.png" class="inline"/><br>
 
  ### Calculate Range, Inter-quartile Range, Standard Deviation    
