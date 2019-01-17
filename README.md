@@ -21,6 +21,8 @@ plt.xticks(rotation='horizontal')
 plt.show()
 ```
 ## Chapter 3 : Displaying Quantitative Data   
+### Problem I
+### Prompt
 ```Python3
 """
 3.6 Exercises
@@ -32,13 +34,19 @@ sample_data = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 1
 (ii) Calculate the mean, median, mode.
 (iii) Calculate Range, Inter-quartile range, and Standard deviation
 """
+
+```
+### Imports
+```Python3
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from scipy import stats
 from bokeh.plotting import figure, show
 from collections import Counter
-
+```
+### Data
+```Python3
 SAMPLE_DATA = [18, 41, 24, 28, 71, 52, 15, 20, 21, 31, 16, 24, 33, 44, 20, 24, 16, 64, 24, 18, 20, 21, 23, 22, 32]
 ```
 
@@ -157,3 +165,43 @@ exercise_iii(SAMPLE_DATA)
 ```
  ####  Range, Inter-quartile Range, Standard Deviation Output  
 <img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e_iii.png" class="inline"/><br>
+
+## Problem II
+### Prompt
+```Python3
+"""Chapter 3: Displaying Quantitative Data
+3.6 Exercises
+
+2. Given two lists of genetic father and son heights in cm
+(i) Generate a scatter plot
+(ii) Determine is a linear relationship appears to be present. 
+"""
+```
+### Data
+```Python3
+F1 = [190, 184, 183, 182, 179, 178, 175, 174, 170, 168, 165, 164]
+S1 = [189, 186, 180, 179, 187, 184, 183, 171, 170, 178, 174, 165]
+```
+
+### Solution
+```Python3
+def problem_ii(Father, Son):
+    """
+    :param Father: Heights of genetic fathers in cm 
+    :param Son:  Heights of genetic sons in cn
+    """
+    fit = np.polyfit(F1, S1, 1)
+    fit_fn = np.poly1d(fit)
+    plt.plot(F1, S1, '.', F1, fit_fn(F1), 'r--', markersize=15)
+    plt.xticks(range(min(min(F1), min(S1)), max(max(F1), max(S1), 1)+1, 1), rotation=90)
+    plt.xlabel('Father Height (cm)')
+    plt.ylabel('Son Height (cm)')
+    plt.title('Linear Relationship Between Father and Son Heights')
+    plt.show()
+
+F1 = [190, 184, 183, 182, 179, 178, 175, 174, 170, 168, 165, 164]
+S1 = [189, 186, 180, 179, 187, 184, 183, 171, 170, 178, 174, 165]
+problem_ii(F1, S1)
+```
+### Scatter Plot with Regression Line: Output
+<img src="https://github.com/ajh1143/MedicalStatistics/blob/master/Chapter_3/Images/e2_i.png" class="inline"/><br>
